@@ -7,12 +7,13 @@ const options = {
         regionCode: "US",
     },
     headers: {
-        "X-RapidAPI-Key": "1c1cd78312msh0f1b80b48a41f4ep1296b0jsn3d49e392552b",
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
         "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
     },
 };
 
 export const FetchFromAPI = async (url) => {
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+    console.log(data);
     return data;
 };
